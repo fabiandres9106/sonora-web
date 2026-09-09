@@ -22,3 +22,7 @@
         max-width: var(--max-w-desktop);
     }
 }
+
+body {
+    @apply font-primary 
+}
