@@ -16,9 +16,19 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.3.2",
+    "astro-icon": "^1.2.0",
     "sharp": "^0.35.0"
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@iconify-json/logos": "^1.2.14",
+    "@iconify-json/material-symbols": "^1.2.91",
+    "@iconify-json/streamline-logos": "^1.2.0",
+    "@midudev/tailwind-animations": "^1.0.2",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3"
   }
 }
