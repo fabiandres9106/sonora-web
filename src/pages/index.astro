@@ -7,7 +7,7 @@ import Header from "../components/Header.astro";
 import ButtonYellow from "../components/common/ButtonYellow.astro";
 import ButtonMenuHeader from "../components/common/ButtonMenuHeader.astro"
 
-import heroImage from "../assets/img/logo_sonora_amarillo.png";
+import heroImage from "../assets/logos/logo_sonora_amarillo.png";
 ---
 
 <!doctype html>
@@ -18,6 +18,7 @@ import heroImage from "../assets/img/logo_sonora_amarillo.png";
 	<body>
 		<Header />
 		<main>
+			<!-- Hero Section -->
 			<div class="w-full items-center flex flex-col px-25 py-10 content-around bg-secondary">
 				<div class="max-w-desktop flex items-center py-25">
 					<div class="w-1/2">
@@ -48,6 +49,25 @@ import heroImage from "../assets/img/logo_sonora_amarillo.png";
 					<ButtonMenuHeader href="#">Servicios</ButtonMenuHeader>
 					<ButtonMenuHeader href="#">Eventos</ButtonMenuHeader>
 					<ButtonMenuHeader href="#">Contacto</ButtonMenuHeader>
+				</div>
+			</div>
+
+			<!-- Nosotros Section -->
+			<div>
+				<div id="gallery-section">
+					<div class="card-stack" id="cardStack">
+						<div class="photo-card" data-index="0">
+
+						</div>
+						<div class="photo-card" data-index="1">
+
+						</div>
+						<div class="photo-card" data-index="2"></div>
+					</div>
+
+				</div>
+				<div>
+
 				</div>
 			</div>
 		</main>
