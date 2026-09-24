@@ -4,14 +4,13 @@ import { Image } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import ButtonYellow from "../components/common/ButtonYellow.astro";
-import ButtonMenuHeader from "../components/common/ButtonMenuHeader.astro"
+import ButtonLightYellow from "../components/common/ButtonLightYellow.astro";
+import ButtonMenuHeader from "../components/common/ButtonMenuHeader.astro";
 
 import heroImage from "../assets/logos/logo_sonora_amarillo.png";
 import nosotrosImg1 from "../assets/img/img1.jpg";
 import nosotrosImg2 from "../assets/img/img4.jpg";
 import nosotrosImg3 from "../assets/img/img16.jpg";
-
 ---
 
 <!doctype html>
@@ -23,10 +22,16 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 		<Header />
 		<main>
 			<!-- Hero Section -->
-			<div class="w-full items-center flex flex-col px-25 py-10 content-around bg-secondary">
+			<div
+				class="w-full items-center flex flex-col px-25 py-10 content-around bg-secondary"
+			>
 				<div class="max-w-desktop flex items-center py-25">
 					<div class="w-1/2">
-						<Image width={450} src={heroImage} alt="Sonora Event Services" />
+						<Image
+							width={450}
+							src={heroImage}
+							alt="Sonora Event Services"
+						/>
 					</div>
 					<div class="w-1/2 flex flex-col align-middle">
 						<h1
@@ -42,9 +47,10 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 							las artes y la cultura
 						</p>
 						<div class="flex gap-5 justify-end py-2">
-							<ButtonYellow href="#">Más información</ButtonYellow>
-							<ButtonYellow href="#">Contacto</ButtonYellow>
-						</div>						
+							<ButtonLightYellow href="#">Más información</ButtonLightYellow
+							>
+							<ButtonLightYellow href="#">Contacto</ButtonLightYellow>
+						</div>
 					</div>
 				</div>
 				<div class="flex gap-5">
@@ -57,23 +63,59 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 			</div>
 
 			<!-- Nosotros Section -->
-			<div>
+			<div class="max-w-desktop flex items-center py-30"> <!-- Falta centrar los elementos -->
 				<div id="gallery-section" class="flex justify-center w-1/2">
-					<div class="card-stack w-90 h-115 cursor-pointer" id="cardStack">
-						<div class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform" data-index="0">
-							<Image class="w-full h-full object-cover" src={nosotrosImg1} alt="SonoraImg1" />
+					<div
+						class="card-stack w-90 h-115 cursor-pointer"
+						id="cardStack"
+					>
+						<div
+							class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform"
+							data-index="0"
+						>
+							<Image
+								class="w-full h-full object-cover"
+								src={nosotrosImg1}
+								alt="SonoraImg1"
+							/>
 						</div>
-						<div class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform" data-index="1">
-							<Image class="w-full h-full object-cover" src={nosotrosImg2} alt="SonoraImg1" />
+						<div
+							class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform"
+							data-index="1"
+						>
+							<Image
+								class="w-full h-full object-cover"
+								src={nosotrosImg2}
+								alt="SonoraImg1"
+							/>
 						</div>
-						<div class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform" data-index="2">
-							<Image class="w-full h-full object-cover" src={nosotrosImg3} alt="SonoraImg1" />
+						<div
+							class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform"
+							data-index="2"
+						>
+							<Image
+								class="w-full h-full object-cover"
+								src={nosotrosImg3}
+								alt="SonoraImg1"
+							/>
 						</div>
 					</div>
-
 				</div>
-				<div class="w-1/2">
+				<div class="w-1/2 flex flex-col items-end justify-center">
 					<!-- Continuar con componentes título y párrafos en sección Nosotros -->
+					<h1 class="title1">Celebremos la vida</h1>
+					<h1 class="title1">Celebremos más</h1>
+					<p class="text-right">
+						Somos una empresa líder en servicios para eventos, pero,
+						para nosotros, eso significa mucho más. Estamos
+						convencidos de que podemos convertir cualquier evento en
+						una experiencia sensorial poderosa, única y
+						extraordinaria, utilizando nuestra experiencia y
+						conocimiento en la industria del entretenimiento, las
+						artes y la cultura. Desde la organización y planeación
+						hasta la ejecución y posterior evaluación, logramos que
+						ocurran cosas increíbles.
+					</p>
 				</div>
 			</div>
 		</main>
@@ -82,58 +124,59 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 </html>
 
 <script>
-
-import {gsap} from "gsap"
+	import { gsap } from "gsap";
 
 	// Gallery Nosotros Script
-const cards = Array.from(document.querySelectorAll('.photo-card')) as HTMLElement[];
+	const cards = Array.from(
+		document.querySelectorAll(".photo-card"),
+	) as HTMLElement[];
 
-//Posiciones iniciales
-const states = [
-	{x: -140, y: 10, rotation: -10, zIndex: 1, scale: 0.8}, // Fondo Izquierda
-	{x: 130, y: 0, rotation: 6, zIndex: 2, scale: 0.78}, // Fondo derecha
-	{x: 0, y: 0, rotation: -3, zIndex: 3, scale: 1} // Frente
-];
+	//Posiciones iniciales
+	const states = [
+		{ x: -140, y: 10, rotation: -10, zIndex: 1, scale: 0.8 }, // Fondo Izquierda
+		{ x: 130, y: 0, rotation: 6, zIndex: 2, scale: 0.78 }, // Fondo derecha
+		{ x: 0, y: 0, rotation: -3, zIndex: 3, scale: 1 }, // Frente
+	];
 
-function updatePositions(animate = true){
-	cards.forEach((card, index) => {
-		const state = states[index];
+	function updatePositions(animate = true) {
+		cards.forEach((card, index) => {
+			const state = states[index];
 
-		//Asignar z-index inmediatamente
-		card.style.zIndex = String(state.zIndex);
+			//Asignar z-index inmediatamente
+			card.style.zIndex = String(state.zIndex);
 
-		if(animate){
-			gsap.to(card, {
-				x: state.x,
-				y: state.y,
-				rotation: state.rotation,
-				scale: state.scale,
-				duration: 0.6,
-				ease: "power2.out"
-			});
-		} else {
-			gsap.set(card, {
-				x: state.x,
-				y: state.y,
-				rotation: state.rotation,
-				scale: state.scale
-			});
-		}
-	});
-}
-
-// Inicializar posiciones
-updatePositions(false);
-
-// Al hacer clic en el contenedor o en las tarjetas rotamos el array de estados
-const stack = document.getElementById('cardStack');
-stack?.addEventListener('click', () => {
-	//Tomamos el último elemento (frente) y lo mandamos al principio del array
-	const frontState = states.pop();
-	if(frontState){
-		states.unshift(frontState);
+			if (animate) {
+				gsap.to(card, {
+					x: state.x,
+					y: state.y,
+					rotation: state.rotation,
+					scale: state.scale,
+					duration: 0.1,
+					ease: "power2.out",
+				});
+			} else {
+				gsap.set(card, {
+					x: state.x,
+					y: state.y,
+					rotation: state.rotation,
+					scale: state.scale,
+				});
+			}
+		});
 	}
-	// Aplicamos posiciones con animación GSAP
-	updatePositions(true);
-})
+
+	// Inicializar posiciones
+	updatePositions(false);
+
+	// Al hacer clic en el contenedor o en las tarjetas rotamos el array de estados
+	const stack = document.getElementById("cardStack");
+	stack?.addEventListener("click", () => {
+		//Tomamos el último elemento (frente) y lo mandamos al principio del array
+		const frontState = states.pop();
+		if (frontState) {
+			states.unshift(frontState);
+		}
+		// Aplicamos posiciones con animación GSAP
+		updatePositions(true);
+	});
 </script>

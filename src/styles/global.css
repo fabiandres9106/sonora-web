@@ -26,3 +26,11 @@
 body {
     @apply font-primary 
 }
+
+h1.title1 {
+    @apply font-bold text-5xl uppercase bg-black text-white inline-block py-1
+}
+
+p{
+    @apply text-base-text leading-5
+}
