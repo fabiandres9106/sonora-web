@@ -39,7 +39,9 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 					Tu navegador no soporta video HTML5
 				</video>
 				<div class="absolute inset-0 bg-secondary/80 z-10"></div>
-				<div class="relative flex flex-col items-center justify-end h-dvh w-full z-20">
+				<div
+					class="relative flex flex-col items-center justify-end h-dvh w-full z-20"
+				>
 					<div
 						class="flex items-center justify-center max-w-desktop pt-20 h-full gap-10"
 					>
@@ -75,7 +77,9 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 					</div>
 					<div class="flex py-10 gap-5">
 						<ButtonMenuHeader href="#">Inicio</ButtonMenuHeader>
-						<ButtonMenuHeader href="#Nosotros">Nosotros</ButtonMenuHeader>
+						<ButtonMenuHeader href="#Nosotros"
+							>Nosotros</ButtonMenuHeader
+						>
 						<ButtonMenuHeader href="#">Servicios</ButtonMenuHeader>
 						<ButtonMenuHeader href="#">Eventos</ButtonMenuHeader>
 						<ButtonMenuHeader href="#">Contacto</ButtonMenuHeader>
@@ -84,7 +88,10 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 			</section>
 
 			<!-- Nosotros Section -->
-			<section id="Nosotros" class="w-full items-center flex flex-col px-25 py-30">
+			<section
+				id="Nosotros"
+				class="w-full items-center flex flex-col px-25 py-30"
+			>
 				<div class="max-w-desktop flex items-center gap-5">
 					<div id="gallery-section" class="flex justify-center w-1/2">
 						<div
@@ -127,8 +134,10 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 						class="w-1/2 flex flex-col items-end justify-center gap-5"
 					>
 						<div class="flex flex-col gap-1 items-end">
-							<h1 class="title1">Celebremos la vida</h1>
-							<h1 class="title1">Celebremos más</h1>
+							<h1 class="title1 text-white">
+								Celebremos la vida
+							</h1>
+							<h1 class="title1 text-white">Celebremos más</h1>
 						</div>
 						<p class="text-right text-base-text">
 							<b
@@ -151,6 +160,29 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 							>
 							<ButtonYellow href="#">Nuestro Equipo</ButtonYellow>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Experiencia Section -->
+			<section
+				id="Experiencia"
+				class="w-full items-center flex flex-col px-25 py-30 bg-primary"
+			>
+				<div class="max-w-desktop flex flex-col items-center gap-5">
+					<div class="flex flex-col items-center gap-5">
+						<h1 class="title1 text-primary text-center">
+							Nuestra Experiencia
+						</h1>
+						<p class="text-center text-secondary">
+							Sabemos que cada fiesta, cada concierto, cada show o
+							cada espectáculo es único y especial. Nuestro
+							compromiso es hacer las cosas más simples para
+							usted. <br /><b
+								>Cuéntenos su idea: lo respaldará nuestra
+								experiencia.</b
+							>
+						</p>
 					</div>
 				</div>
 			</section>
@@ -206,13 +238,29 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 
 	// Al hacer clic en el contenedor o en las tarjetas rotamos el array de estados
 	const stack = document.getElementById("cardStack");
-	stack?.addEventListener("click", () => {
-		//Tomamos el último elemento (frente) y lo mandamos al principio del array
+
+	// 1. Extraemos la lógica a una función reutilizable
+	function rotateCards() {
 		const frontState = states.pop();
 		if (frontState) {
 			states.unshift(frontState);
 		}
 		// Aplicamos posiciones con animación GSAP
 		updatePositions(true);
+	}
+
+	// 2. Mantenemos el evento al hacer clic
+	stack?.addEventListener("click", () => {
+		rotateCards();
+		resetAutoRotate(); // Opcional: reinicia el temporizador si el usuario hace clic
 	});
+
+	// 3. Ejecución periódica cada 5 segundos (5000 ms)
+	let autoRotateInterval = setInterval(rotateCards, 2000);
+
+	// 4. Función para reiniciar el temporizador
+	function resetAutoRotate() {
+		clearInterval(autoRotateInterval);
+		autoRotateInterval = setInterval(rotateCards, 5000);
+	}
 </script>

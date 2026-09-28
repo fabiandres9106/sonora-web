@@ -32,8 +32,10 @@ body {
 }
 
 h1.title1 {
-    @apply font-bold text-5xl uppercase bg-black text-white inline-block py-0.5
+    @apply font-bold text-5xl uppercase bg-black inline-block py-0.5
 }
+
+
 
 p{
     @apply leading-5
