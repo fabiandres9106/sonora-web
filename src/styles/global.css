@@ -23,6 +23,10 @@
     }
 }
 
+html {
+    @apply scroll-smooth
+}
+
 body {
     @apply font-primary 
 }
