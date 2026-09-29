@@ -32,12 +32,33 @@ const { type, data, title } = Astro.props as Props;
                 <Image src={person} alt="Micrófono" class="w-full" />
             )
         }
-        {
-            type === "like" && (
-                <Image src={like} alt="Micrófono" class="w-full" />
-            )
-        }
+        {type === "like" && <Image src={like} alt="Micrófono" class="w-full" />}
     </div>
-    <h2 class="text-5xl font-bold text-center">+{data}</h2>
+    <h2 class="counter text-5xl font-bold text-center" data-target={data}>
+        +0
+    </h2>
     <h3 class="text-xl text-center">{title}</h3>
 </div>
+
+<script>
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach((counter) => {
+        const updateCount = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerHTML;
+
+            const speed = 500;
+            const increment = target / speed;
+
+            if (count < target) {
+                counter.innerHTML = "+" + Math.ceil(count + increment);
+                setTimeout(updateCount, 15);
+            } else {
+                counter.innerHTML = "+" + target;
+            }
+        };
+
+        updateCount();
+    });
+</script>
