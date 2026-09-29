@@ -7,6 +7,7 @@ import Header from "../components/Header.astro";
 import ButtonLightYellow from "../components/common/ButtonLightYellow.astro";
 import ButtonMenuHeader from "../components/common/ButtonMenuHeader.astro";
 import ButtonYellow from "../components/common/ButtonYellow.astro";
+import ExperienceInfo from "../components/ExperienceInfo.astro";
 
 import fondo_inicio_bn from "../assets/img/fondo_inicio_bn.jpg";
 import heroImage from "../assets/logos/logo_sonora_amarillo.png";
@@ -156,8 +157,7 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 						</p>
 						<div class="flex gap-2.5">
 							<ButtonYellow href="#">Nosotros</ButtonYellow>
-							<ButtonYellow href="#">Nuestra Cultura</ButtonYellow
-							>
+							<ButtonYellow href="#">Nuestra Cultura</ButtonYellow>
 							<ButtonYellow href="#">Nuestro Equipo</ButtonYellow>
 						</div>
 					</div>
@@ -169,7 +169,7 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 				id="Experiencia"
 				class="w-full items-center flex flex-col px-25 py-30 bg-primary"
 			>
-				<div class="max-w-desktop flex flex-col items-center gap-5">
+				<div class="max-w-desktop flex flex-col items-center gap-10">
 					<div class="flex flex-col items-center gap-5">
 						<h1 class="title1 text-primary text-center">
 							Nuestra Experiencia
@@ -183,6 +183,12 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
 								experiencia.</b
 							>
 						</p>
+					</div>
+					<div class="flex gap-30">
+						<ExperienceInfo type="microphone" data="1.000" title="Eventos realizados" />
+						<ExperienceInfo type="person" data="150.000" title="Asistentes" />
+						<ExperienceInfo type="guitar" data="5.000" title="Artistas impactados" />
+						<ExperienceInfo type="like" data="17" title="Años de experiencia" />
 					</div>
 				</div>
 			</section>

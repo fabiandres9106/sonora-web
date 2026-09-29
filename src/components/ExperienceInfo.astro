@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+
+import microphone from "../icons/microfono.png";
+import guitar from "../icons/guitarra-acustica-clasica.png";
+import person from "../icons/hombre-feliz.png";
+import like from "../icons/like.png";
+
+interface Props {
+    title: string;
+    type: "microphone" | "guitar" | "person" | "like";
+    data: string;
+}
+
+const { type, data, title } = Astro.props as Props;
+---
+
+<div class="flex flex-col items-center gap-2">
+    <div class="border-3 rounded-full p-5 w-30">
+        {
+            type === "microphone" && (
+                <Image src={microphone} alt="Micrófono" class="w-full" />
+            )
+        }
+        {
+            type === "guitar" && (
+                <Image src={guitar} alt="Micrófono" class="w-full" />
+            )
+        }
+        {
+            type === "person" && (
+                <Image src={person} alt="Micrófono" class="w-full" />
+            )
+        }
+        {
+            type === "like" && (
+                <Image src={like} alt="Micrófono" class="w-full" />
+            )
+        }
+    </div>
+    <h2 class="text-5xl font-bold text-center">+{data}</h2>
+    <h3 class="text-xl text-center">{title}</h3>
+</div>
