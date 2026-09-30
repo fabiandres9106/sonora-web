@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import datosClientes from "../data/clientes";
 
 const logosClientes = Object.entries(
     import.meta.glob("../assets/logos-clientes/*.{png,jpg,jpeg,webp,svg}", {
@@ -8,21 +8,81 @@ const logosClientes = Object.entries(
         import: "default",
     }),
 ).map(([path, src]) => {
-    const nombre = path.split("/").at(-1)?.replace(/\.[^.]+$/, "").replaceAll("_", " ") ?? "cliente";
-    return {src, alt: `Logo de ${nombre}`};
+    const nombre =
+        path
+            .split("/")
+            .at(-1)
+            ?.replace(/\.[^.]+$/, "")
+            .replaceAll("_", " ") ?? "cliente";
+    return { src, alt: `Logo de ${nombre}` };
+});
+
+// Logos - Url
+const logosPorRuta = import.meta.glob<string>(
+    "../assets/logos-clientes/*.{png,jpg,jpeg,webp,svg}",
+    { eager: true, query: "?url", import: "default" },
+);
+
+const clientes = datosClientes.map(({ archivoLogo, ...cliente }) => {
+    const src = logosPorRuta[`../assets/logos-clientes/${archivoLogo}`];
+
+    if (!src) {
+        throw new Error(`No se encontró el logo: ${archivoLogo}`);
+    }
+
+    return { ...cliente, src };
 });
 ---
 
-<section class="w-full flex flex-col items-center py-20 gap-10 bg-secondary overflow-hidden">
+<section
+    class="w-full flex flex-col items-center py-20 gap-10 bg-secondary overflow-hidden"
+>
     <h1 class="title1 text-primary">Clientes</h1>
-    <div class="logos-track flex gap-12">
-        {logosClientes.map(({src, alt}) => (<img src={src} alt={alt} loading="lazy" class="h-16 w-auto object-contain" />))}
-        {logosClientes.map(({src, alt}) => (<img src={src} alt={alt} loading="lazy" class="h-16 w-auto object-contain" />))}
+
+    <div class="w-full overflow-hidden">
+        <div class="logos-track flex w-max gap-12">
+            <div class="flex shrink-0 gap-12">
+                {
+                    clientes.map(({ nombre, url, src }) => (
+                        <a
+                            href={url}
+                            aria-label={`Visitar el sitio de ${nombre}`}
+                            target="_blank"
+                        >
+                            <img
+                                class="h-16 w-auto object-contain"
+                                src={src}
+                                alt={`Logo de ${nombre}`}
+                                loading="lazy"
+                            />
+                        </a>
+                    ))
+                }
+            </div>
+            <div class="flex shrink-0 gap-12" aria-hidden="true">
+                {
+                    clientes.map(({ nombre, url, src }) => (
+                        <a
+                            href={url}
+                            aria-label={`Visitar el sitio de ${nombre}`}
+                            target="_blank"
+                        >
+                            <img
+                                class="h-16 w-auto object-contain"
+                                src={src}
+                                alt={`Logo de ${nombre}`}
+                                loading="lazy"
+                            />
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
     </div>
 </section>
 
 <script>
-    import {gsap} from "gsap";
+    import { gsap } from "gsap";
 
     const logosTrack = document.querySelector(".logos-track");
 
