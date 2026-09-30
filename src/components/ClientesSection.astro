@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+
+const logosClientes = Object.entries(
+    import.meta.glob("../assets/logos-clientes/*.{png,jpg,jpeg,webp,svg}", {
+        eager: true,
+        query: "?url",
+        import: "default",
+    }),
+).map(([path, src]) => {
+    const nombre = path.split("/").at(-1)?.replace(/\.[^.]+$/, "").replaceAll("_", " ") ?? "cliente";
+    return {src, alt: `Logo de ${nombre}`};
+});
+---
+
+<section class="w-full flex flex-col items-center py-20 gap-10 bg-secondary overflow-hidden">
+    <h1 class="title1 text-primary">Clientes</h1>
+    <div class="logos-track flex gap-12">
+        {logosClientes.map(({src, alt}) => (<img src={src} alt={alt} loading="lazy" class="h-16 w-auto object-contain" />))}
+        {logosClientes.map(({src, alt}) => (<img src={src} alt={alt} loading="lazy" class="h-16 w-auto object-contain" />))}
+    </div>
+</section>
+
+<script>
+    import {gsap} from "gsap";
+
+    const logosTrack = document.querySelector(".logos-track");
+
+    gsap.to(logosTrack, {
+        xPercent: -50,
+        duration: 30,
+        ease: "none",
+        repeat: -1,
+    });
+</script>

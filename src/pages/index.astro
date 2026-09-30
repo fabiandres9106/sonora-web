@@ -1,6 +1,8 @@
 ---
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import { Image } from "astro:assets";
+
+// Components
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -8,13 +10,16 @@ import ButtonLightYellow from "../components/common/ButtonLightYellow.astro";
 import ButtonMenuHeader from "../components/common/ButtonMenuHeader.astro";
 import ButtonYellow from "../components/common/ButtonYellow.astro";
 import ExperienceInfo from "../components/ExperienceInfo.astro";
+import ClientesSection from "../components/ClientesSection.astro";
 
+// Site Images
 import fondo_inicio_bn from "../assets/img/fondo_inicio_bn.jpg";
 import heroImage from "../assets/logos/logo_sonora_amarillo.png";
 import nosotrosImg1 from "../assets/img/img1.jpg";
 import nosotrosImg2 from "../assets/img/img4.jpg";
 import nosotrosImg3 from "../assets/img/img16.jpg";
 import logoSonoraGris from "../assets/logos/logo_sonora_gris.png";
+
 ---
 
 <!doctype html>
@@ -216,6 +221,10 @@ import logoSonoraGris from "../assets/logos/logo_sonora_gris.png";
 					</div>
 				</div>
 			</section>
+
+			<!-- Clientes Section -->
+			<ClientesSection />
+			
 		</main>
 		<Footer />
 	</body>

@@ -32,7 +32,7 @@ body {
 }
 
 h1.title1 {
-    @apply font-bold text-5xl uppercase bg-black inline-block py-0.5
+    @apply font-bold text-5xl uppercase bg-secondary inline-block py-0.5
 }
 
 
