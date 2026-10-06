@@ -4,7 +4,9 @@ const { href, class: className, ...props } = Astro.props;
 
 <a
     href={href}
-    class="text-secondary border border-secondary p-1 uppercase text-sm font-semibold transition-all bg-primary hover:bg-secondary hover:text-primary hover:border-primary"
+    class="text-secondary border border-secondary p-1 uppercase text-sm font-semibold transition-all bg-primary hover:bg-secondary hover:text-primary"
+    data-no-drag
+    draggable="false"
     ><slot /></a
 >
 

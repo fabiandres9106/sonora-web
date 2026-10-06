@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import ButtonYellow from "./ButtonYellow.astro";
+
+import sonora_bgDefault from "../../assets/img/sonora_bgDefault.svg";
+
+interface Props {
+    title: string;
+    description: string;
+    href?: string;
+    heroImage?: ImageMetadata;
+}
+
+const {
+    title,
+    description,
+    href,
+    heroImage = sonora_bgDefault,
+} = Astro.props as Props;
+---
+
+<div class="border rounded-lg w-96 min-w-96 mx-2.5">
+    <div>
+        {
+            heroImage && (
+                <a class="block overflow-hidden select-none" href={href}>
+                    <Image
+                        class="w-full h-90 object-cover object-center rounded-t-lg scale-100 grayscale hover:grayscale-0 hover:scale-105 transition-all"
+                        draggable="false"
+                        src={heroImage}
+                        alt={title}
+                    />
+                </a>
+            )
+        }
+    </div>
+    <div class="flex flex-col items-baseline p-5 gap-2.5">
+        <h1
+            class="font-bold text-xl uppercase bg-secondary text-white inline-block py-0.5"
+        >
+            {title}
+        </h1>
+        <p class="text-sm leading-4">{description}</p>
+        {href && <ButtonYellow href={href}>Más información</ButtonYellow>}
+    </div>
+</div>

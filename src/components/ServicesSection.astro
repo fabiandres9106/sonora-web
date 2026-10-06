@@ -1,0 +1,83 @@
+---
+import CardSonora from "./common/CardSonora.astro";
+import { getCollection } from "astro:content";
+
+const allServices = (await getCollection("services")).sort(
+    (a, b) => a.data.order - b.data.order,
+);
+---
+
+<section
+    class="flex flex-col w-full items-center py-20 gap-10 overflow-hidden border-b"
+>
+    <div class="flex flex-col max-w-desktop items-center gap-10">
+        <h1 class="title1 text-white">Servicios</h1>
+        <p class="text-center text-secondary">
+            <b>Admiramos las grandes ideas y los desafíos.</b> Nuestro equipo de trabajo
+            conducido por el amor a lo que hacemos, estará siempre dispuesto a ayudarle,
+            alineados en conjunto con nuestra misión. Somos seres humanos apasionados
+            con expectativas muy altas y <b
+                >nos gusta entablar una relación con nuestros clientes a largo
+                plazo.</b
+            >
+        </p>
+    </div>
+
+    <div
+        class="flex w-full overflow-x-auto cursor-grab active:cursor-grabbing scrollbar-none select-none"
+        data-card-scroller
+    >
+        <div
+            class="flex flex-none w-max min-w-full justify-start 2xl:justify-center px-16"
+        >
+            {
+                allServices.map((service) => (
+                    <CardSonora
+                        title={service.data.title}
+                        description={service.data.description}
+                        href={service.data.href}
+                        heroImage={service.data.heroImage}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    const scroller = document
+        .querySelectorAll<HTMLElement>("[data-card-scroller]")
+        .forEach((scroller) => {
+            if (scroller.dataset.dragInitialized) return;
+            scroller.dataset.dragInitialized = "true";
+            let dragging = false;
+            let startX = 0;
+            let startScrollLeft = 0;
+            scroller.addEventListener("pointerdown", (event) => {
+                if (event.pointerType !== "mouse" || event.button !== 0) return;
+                if (
+                    event.target instanceof Element &&
+                    event.target.closest("[data-no-drag]")
+                )
+                    return;
+                dragging = true;
+                startX = event.clientX;
+                startScrollLeft = scroller.scrollLeft;
+                scroller.setPointerCapture(event.pointerId);
+            });
+            scroller.addEventListener("pointermove", (event) => {
+                if (!dragging) return;
+                scroller.scrollLeft =
+                    startScrollLeft - (event.clientX - startX);
+            });
+            const stopDragging = () => {
+                dragging = false;
+            };
+            scroller.addEventListener("dragstart", (event) => {
+                event.preventDefault();
+            });
+            scroller.addEventListener("pointerup", stopDragging);
+            scroller.addEventListener("pointercancel", stopDragging);
+            scroller.addEventListener("lostpointercapture", stopDragging);
+        });
+</script>
