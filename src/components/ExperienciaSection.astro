@@ -1,0 +1,43 @@
+---
+import ExperienceInfo from "./ExperienceInfo.astro";
+
+import logoSonoraGris from "../assets/logos/logo_sonora_gris.png";
+---
+
+<section
+    id="Experiencia"
+    class="relative w-full items-center flex flex-col px-25 py-30 bg-primary"
+>
+    <!-- Background Image -->
+    <div
+        class="absolute inset-0 z-0 opacity-10 bg-cover bg-center bg-no-repeat bg-fixed"
+        style={`background-image:url('${logoSonoraGris.src}')`}
+    >
+    </div>
+    <div class="max-w-desktop flex flex-col items-center gap-10">
+        <div class="flex flex-col items-center gap-5">
+            <h1 class="title1 text-primary text-center">Nuestra Experiencia</h1>
+            <p class="text-center text-secondary">
+                Sabemos que cada fiesta, cada concierto, cada show o cada
+                espectáculo es único y especial. Nuestro compromiso es hacer las
+                cosas más simples para usted. <br /><b
+                    >Cuéntenos su idea: lo respaldará nuestra experiencia.</b
+                >
+            </p>
+        </div>
+        <div class="flex gap-30">
+            <ExperienceInfo
+                type="microphone"
+                data="1000"
+                title="Eventos realizados"
+            />
+            <ExperienceInfo type="person" data="150000" title="Asistentes" />
+            <ExperienceInfo
+                type="guitar"
+                data="5000"
+                title="Artistas impactados"
+            />
+            <ExperienceInfo type="like" data="17" title="Años de experiencia" />
+        </div>
+    </div>
+</section>

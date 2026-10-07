@@ -1,26 +1,18 @@
 ---
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import { Image } from "astro:assets";
 
 // Components
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import ButtonLightYellow from "../components/common/ButtonLightYellow.astro";
-import ButtonMenuHeader from "../components/common/ButtonMenuHeader.astro";
-import ButtonYellow from "../components/common/ButtonYellow.astro";
-import ExperienceInfo from "../components/ExperienceInfo.astro";
+
+// Sections
+import HeroSection from "../components/HeroSection.astro";
+import NosotrosSection from "../components/NosotrosSection.astro";
+import ExperienciaSection from "../components/ExperienciaSection.astro";
 import ClientesSection from "../components/ClientesSection.astro";
 import ServicesSection from "../components/ServicesSection.astro";
 import EventosSection from "../components/EventosSection.astro";
-
-// Site Images
-import fondo_inicio_bn from "../assets/img/fondo_inicio_bn.jpg";
-import heroImage from "../assets/logos/logo_sonora_amarillo.png";
-import nosotrosImg1 from "../assets/img/img1.jpg";
-import nosotrosImg2 from "../assets/img/img4.jpg";
-import nosotrosImg3 from "../assets/img/img16.jpg";
-import logoSonoraGris from "../assets/logos/logo_sonora_gris.png";
 
 ---
 
@@ -33,196 +25,13 @@ import logoSonoraGris from "../assets/logos/logo_sonora_gris.png";
 		<Header />
 		<main>
 			<!-- Hero Section -->
-			<section
-				class="w-full h-dvh items-center flex flex-col bg-secondary"
-			>
-				<video
-					autoplay
-					muted
-					loop
-					playsinline
-					poster={fondo_inicio_bn.src}
-					class="absolute inset-0 w-full h-dvh object-cover z-0"
-				>
-					<source src="" />
-					Tu navegador no soporta video HTML5
-				</video>
-				<div class="absolute inset-0 bg-secondary/80 z-10"></div>
-				<div
-					class="relative flex flex-col items-center justify-end h-dvh w-full z-20"
-				>
-					<div
-						class="flex items-center justify-center max-w-desktop pt-20 h-full gap-10"
-					>
-						<div class="w-1/2">
-							<Image
-								width={450}
-								src={heroImage}
-								alt="Sonora Event Services"
-							/>
-						</div>
-						<div class="w-1/2 flex flex-col gap-5 align-middle">
-							<h1
-								class="text-primary font-bold text-5xl text-right leading-12"
-							>
-								CELEBREMOS LA VIDA<br />CELEBREMOS MÁS
-							</h1>
-							<p class="text-primary text-right leading-5 py-2">
-								Estamos convencidos de que podemos convertir
-								cualquier evento en una experiencia poderosa,
-								única y extraordinaria utilizando nuestra
-								experiencia y conocimiento en la industria del
-								entretenimiento, las artes y la cultura
-							</p>
-							<div class="flex gap-5 justify-end py-2">
-								<ButtonLightYellow href="#"
-									>Más información</ButtonLightYellow
-								>
-								<ButtonLightYellow href="#"
-									>Contacto</ButtonLightYellow
-								>
-							</div>
-						</div>
-					</div>
-					<div class="flex py-10 gap-5">
-						<ButtonMenuHeader href="#">Inicio</ButtonMenuHeader>
-						<ButtonMenuHeader href="#Nosotros"
-							>Nosotros</ButtonMenuHeader
-						>
-						<ButtonMenuHeader href="#">Servicios</ButtonMenuHeader>
-						<ButtonMenuHeader href="#">Eventos</ButtonMenuHeader>
-						<ButtonMenuHeader href="#">Contacto</ButtonMenuHeader>
-					</div>
-				</div>
-			</section>
+			<HeroSection />
 
 			<!-- Nosotros Section -->
-			<section
-				id="Nosotros"
-				class="w-full items-center flex flex-col px-25 py-30"
-			>
-				<div class="max-w-desktop flex items-center gap-5">
-					<div id="gallery-section" class="flex justify-center w-1/2">
-						<div
-							class="card-stack w-90 h-115 cursor-pointer"
-							id="cardStack"
-						>
-							<div
-								class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform"
-								data-index="0"
-							>
-								<Image
-									class="w-full h-full object-cover"
-									src={nosotrosImg1}
-									alt="SonoraImg1"
-								/>
-							</div>
-							<div
-								class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform"
-								data-index="1"
-							>
-								<Image
-									class="w-full h-full object-cover"
-									src={nosotrosImg2}
-									alt="SonoraImg1"
-								/>
-							</div>
-							<div
-								class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform"
-								data-index="2"
-							>
-								<Image
-									class="w-full h-full object-cover"
-									src={nosotrosImg3}
-									alt="SonoraImg1"
-								/>
-							</div>
-						</div>
-					</div>
-					<div
-						class="w-1/2 flex flex-col items-end justify-center gap-5"
-					>
-						<div class="flex flex-col gap-1 items-end">
-							<h1 class="title1 text-white">
-								Celebremos la vida
-							</h1>
-							<h1 class="title1 text-white">Celebremos más</h1>
-						</div>
-						<p class="text-right text-base-text">
-							<b
-								>Somos una empresa líder en servicios para
-								eventos</b
-							>, pero, para nosotros, eso significa mucho más.
-							Estamos convencidos de que podemos convertir
-							cualquier evento en una experiencia sensorial
-							poderosa, única y extraordinaria, utilizando nuestra
-							experiencia y conocimiento en la industria del
-							entretenimiento, las artes y la cultura. <b
-								>Desde la organización y planeación hasta la
-								ejecución y posterior evaluación, logramos que
-								ocurran cosas increíbles.</b
-							>
-						</p>
-						<div class="flex gap-2.5">
-							<ButtonYellow href="#">Nosotros</ButtonYellow>
-							<ButtonYellow href="#">Nuestra Cultura</ButtonYellow
-							>
-							<ButtonYellow href="#">Nuestro Equipo</ButtonYellow>
-						</div>
-					</div>
-				</div>
-			</section>
+			<NosotrosSection />
 
 			<!-- Experiencia Section -->
-			<section
-				id="Experiencia"
-				class="relative w-full items-center flex flex-col px-25 py-30 bg-primary"
-			>
-				<!-- Background Image -->
-				<div
-					class="absolute inset-0 z-0 opacity-10 bg-cover bg-center bg-no-repeat bg-fixed"
-					style={`background-image:url('${logoSonoraGris.src}')`}
-				>
-				</div>
-				<div class="max-w-desktop flex flex-col items-center gap-10">
-					<div class="flex flex-col items-center gap-5">
-						<h1 class="title1 text-primary text-center">
-							Nuestra Experiencia
-						</h1>
-						<p class="text-center text-secondary">
-							Sabemos que cada fiesta, cada concierto, cada show o
-							cada espectáculo es único y especial. Nuestro
-							compromiso es hacer las cosas más simples para
-							usted. <br /><b
-								>Cuéntenos su idea: lo respaldará nuestra
-								experiencia.</b
-							>
-						</p>
-					</div>
-					<div class="flex gap-30">
-						<ExperienceInfo
-							type="microphone"
-							data="1000"
-							title="Eventos realizados"
-						/>
-						<ExperienceInfo
-							type="person"
-							data="150000"
-							title="Asistentes"
-						/>
-						<ExperienceInfo
-							type="guitar"
-							data="5000"
-							title="Artistas impactados"
-						/>
-						<ExperienceInfo
-							type="like"
-							data="17"
-							title="Años de experiencia"
-						/>
-					</div>
-				</div>
-			</section>
+			<ExperienciaSection />
 
 			<!-- Clientes Section -->
 			<ClientesSection />
@@ -231,83 +40,8 @@ import logoSonoraGris from "../assets/logos/logo_sonora_gris.png";
 			<ServicesSection />
 
 			<!-- Events Section -->
-			 <EventosSection />
-			
+			<EventosSection />
 		</main>
 		<Footer />
 	</body>
 </html>
-
-<script>
-	import { gsap } from "gsap";
-
-	// Gallery Nosotros Script
-	const cards = Array.from(
-		document.querySelectorAll(".photo-card"),
-	) as HTMLElement[];
-
-	//Posiciones iniciales
-	const states = [
-		{ x: -140, y: 10, rotation: -10, zIndex: 1, scale: 0.8 }, // Fondo Izquierda
-		{ x: 130, y: 0, rotation: 6, zIndex: 2, scale: 0.78 }, // Fondo derecha
-		{ x: 0, y: 0, rotation: -3, zIndex: 3, scale: 1 }, // Frente
-	];
-
-	function updatePositions(animate = true) {
-		cards.forEach((card, index) => {
-			const state = states[index];
-
-			//Asignar z-index inmediatamente
-			card.style.zIndex = String(state.zIndex);
-
-			if (animate) {
-				gsap.to(card, {
-					x: state.x,
-					y: state.y,
-					rotation: state.rotation,
-					scale: state.scale,
-					duration: 0.1,
-					ease: "power2.out",
-				});
-			} else {
-				gsap.set(card, {
-					x: state.x,
-					y: state.y,
-					rotation: state.rotation,
-					scale: state.scale,
-				});
-			}
-		});
-	}
-
-	// Inicializar posiciones
-	updatePositions(false);
-
-	// Al hacer clic en el contenedor o en las tarjetas rotamos el array de estados
-	const stack = document.getElementById("cardStack");
-
-	// 1. Extraemos la lógica a una función reutilizable
-	function rotateCards() {
-		const frontState = states.pop();
-		if (frontState) {
-			states.unshift(frontState);
-		}
-		// Aplicamos posiciones con animación GSAP
-		updatePositions(true);
-	}
-
-	// 2. Mantenemos el evento al hacer clic
-	stack?.addEventListener("click", () => {
-		rotateCards();
-		resetAutoRotate(); // Opcional: reinicia el temporizador si el usuario hace clic
-	});
-
-	// 3. Ejecución periódica cada 5 segundos (5000 ms)
-	let autoRotateInterval = setInterval(rotateCards, 2000);
-
-	// 4. Función para reiniciar el temporizador
-	function resetAutoRotate() {
-		clearInterval(autoRotateInterval);
-		autoRotateInterval = setInterval(rotateCards, 5000);
-	}
-</script>

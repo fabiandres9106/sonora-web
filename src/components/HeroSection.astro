@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import ButtonLightYellow from "../components/common/ButtonLightYellow.astro";
+import ButtonMenuHeader from "../components/common/ButtonMenuHeader.astro";
+import fondo_inicio_bn from "../assets/img/fondo_inicio_bn.jpg";
+import heroImage from "../assets/logos/logo_sonora_amarillo.png";
+---
+
+<section class="w-full h-dvh items-center flex flex-col bg-secondary">
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster={fondo_inicio_bn.src}
+        class="absolute inset-0 w-full h-dvh object-cover z-0"
+    >
+        <source src="" />
+        Tu navegador no soporta video HTML5
+    </video>
+    <div class="absolute inset-0 bg-secondary/80 z-10"></div>
+    <div
+        class="relative flex flex-col items-center justify-end h-dvh w-full z-20"
+    >
+        <div
+            class="flex items-center justify-center max-w-desktop pt-20 h-full gap-10"
+        >
+            <div class="w-1/2">
+                <Image
+                    width={450}
+                    src={heroImage}
+                    alt="Sonora Event Services"
+                />
+            </div>
+            <div class="w-1/2 flex flex-col gap-5 align-middle">
+                <h1
+                    class="text-primary font-bold text-5xl text-right leading-12"
+                >
+                    CELEBREMOS LA VIDA<br />CELEBREMOS MÁS
+                </h1>
+                <p class="text-primary text-right leading-5 py-2">
+                    Estamos convencidos de que podemos convertir cualquier
+                    evento en una experiencia poderosa, única y extraordinaria
+                    utilizando nuestra experiencia y conocimiento en la
+                    industria del entretenimiento, las artes y la cultura
+                </p>
+                <div class="flex gap-5 justify-end py-2">
+                    <ButtonLightYellow href="#"
+                        >Más información</ButtonLightYellow
+                    >
+                    <ButtonLightYellow href="#">Contacto</ButtonLightYellow>
+                </div>
+            </div>
+        </div>
+        <div class="flex py-10 gap-5">
+            <ButtonMenuHeader href="#">Inicio</ButtonMenuHeader>
+            <ButtonMenuHeader href="#Nosotros">Nosotros</ButtonMenuHeader>
+            <ButtonMenuHeader href="#">Servicios</ButtonMenuHeader>
+            <ButtonMenuHeader href="#">Eventos</ButtonMenuHeader>
+            <ButtonMenuHeader href="#">Contacto</ButtonMenuHeader>
+        </div>
+    </div>
+</section>
