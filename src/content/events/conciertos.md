@@ -1,12 +1,9 @@
 ---
-title: 'Producción Creativa'
+title: 'Conciertos'
 order: 4
-description: 'Somos parte de la industria del entretenimiento, por ende, creemos firmemente en la sinergia de las artes con la producción. '
-heroImage: '../../assets/img/img16.jpg'
+description: 'Contamos con el despliegue técnico y logístico para eventos masivos de alta calidad: sistemas line array, monitoreo, backline, iluminación, pantallas led, tarimas y estructuras necesarias.'
+heroImage: '../../assets/img/img22.png'
 href: '#ProduccionArtística'
-tags: ['Booking & Talentos', 'Curaduría Cultural', 'Entretenimiento']
+tags: ['Producción Masiva', 'Sistemas Line Array', 'Estructuras & Tarimas', 'Backline & Monitoreo', 'Show de Luces & LED']
 ---
-
-## Una conexión profunda con la estética.
-
-La música, el teatro, la danza o cualquier manifestación artística juega un papel imprescindible en el desarrollo de la mayoría de los eventos. Somos parte de la industria del entretenimiento, por ende, creemos firmemente en la sinergia de las artes con la producción.
+Amamos las aglomeraciones, y como profesionales de la industria de los eventos, los espectáculos de música en vivo son para nosotros realmente apasionantes. Trabajamos arduamente para brindarle al mundo, mejores shows, mejor sonido y mejor iluminación. Contamos con el despliegue técnico y logístico para eventos masivos de alta calidad: sistemas line array, monitoreo, sistemas inalámbricos, backline, iluminación, efectos, pantallas led, techos, tarimas y demás estructuras necesarias. ¡Producción!

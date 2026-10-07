@@ -36,7 +36,6 @@ const allServices = (await getCollection("events")).sort(
                     <CardSonora
                         title={event.data.title}
                         description={event.data.description}
-                        href={event.data.href}
                         heroImage={event.data.heroImage}
                     />
                 ))
@@ -50,37 +49,35 @@ const allServices = (await getCollection("events")).sort(
         .querySelectorAll<HTMLElement>("[data-card-scroller]")
         .forEach((scroller) => {
             if (scroller.dataset.dragInitialized) return;
-            scroller.dataset.dragInitialized = "true"; 
-                let dragging = false;
-                let startX = 0;
-                let startScrollLeft = 0;
-                scroller.addEventListener("pointerdown", (event) => {
-                    if (event.pointerType !== "mouse" || event.button !== 0)
-                        return;
-                    if (
-                        event.target instanceof Element &&
-                        event.target.closest("[data-no-drag]")
-                    )
-                        return;
-                    dragging = true;
-                    startX = event.clientX;
-                    startScrollLeft = scroller.scrollLeft;
-                    scroller.setPointerCapture(event.pointerId);
-                });
-                scroller.addEventListener("pointermove", (event) => {
-                    if (!dragging) return;
-                    scroller.scrollLeft =
-                        startScrollLeft - (event.clientX - startX);
-                });
-                const stopDragging = () => {
-                    dragging = false;
-                };
-                scroller.addEventListener("dragstart", (event) => {
-                    event.preventDefault();
-                });
-                scroller.addEventListener("pointerup", stopDragging);
-                scroller.addEventListener("pointercancel", stopDragging);
-                scroller.addEventListener("lostpointercapture", stopDragging);
-            }
-        );
+            scroller.dataset.dragInitialized = "true";
+            let dragging = false;
+            let startX = 0;
+            let startScrollLeft = 0;
+            scroller.addEventListener("pointerdown", (event) => {
+                if (event.pointerType !== "mouse" || event.button !== 0) return;
+                if (
+                    event.target instanceof Element &&
+                    event.target.closest("[data-no-drag]")
+                )
+                    return;
+                dragging = true;
+                startX = event.clientX;
+                startScrollLeft = scroller.scrollLeft;
+                scroller.setPointerCapture(event.pointerId);
+            });
+            scroller.addEventListener("pointermove", (event) => {
+                if (!dragging) return;
+                scroller.scrollLeft =
+                    startScrollLeft - (event.clientX - startX);
+            });
+            const stopDragging = () => {
+                dragging = false;
+            };
+            scroller.addEventListener("dragstart", (event) => {
+                event.preventDefault();
+            });
+            scroller.addEventListener("pointerup", stopDragging);
+            scroller.addEventListener("pointercancel", stopDragging);
+            scroller.addEventListener("lostpointercapture", stopDragging);
+        });
 </script>

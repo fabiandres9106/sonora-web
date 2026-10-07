@@ -1,12 +1,9 @@
 ---
-title: 'Producción Creativa'
+title: 'Deportivos'
 order: 5
-description: 'Somos parte de la industria del entretenimiento, por ende, creemos firmemente en la sinergia de las artes con la producción. '
-heroImage: '../../assets/img/img16.jpg'
-href: '#ProduccionArtística'
-tags: ['Booking & Talentos', 'Curaduría Cultural', 'Entretenimiento']
+description: 'Hemos trabajado en diferentes torneos, maratones, premiaciones y circuitos que requieren de procesos de producción técnica y logística.'
+heroImage: '../../assets/img/img25.png'
+href: '#'
+tags: ['Maratones & Torneos', 'Sistemas de Voceo / PA', 'Ceremonias de Premiación', 'Logística de Campo', 'Pantallas de Tiempo Real']
 ---
-
-## Una conexión profunda con la estética.
-
-La música, el teatro, la danza o cualquier manifestación artística juega un papel imprescindible en el desarrollo de la mayoría de los eventos. Somos parte de la industria del entretenimiento, por ende, creemos firmemente en la sinergia de las artes con la producción.
+Los eventos deportivos también hacen parte de nuestro catálogo de servicios. Hemos tenido la oportunidad de trabajar en diferentes torneos, maratones, premiaciones y circuitos que requieren sin duda alguna de un proceso de producción tanto logístico como técnico. 

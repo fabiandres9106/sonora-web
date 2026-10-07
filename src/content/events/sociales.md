@@ -1,12 +1,10 @@
 ---
-title: 'Producción Técnica'
+title: 'Sociales'
 order: 1
-description: 'Contamos con sistemas de sonido, iluminación, proyección, transmisión, grabación y efectos para potenciar cualquier evento corporativo o cultural.'
-heroImage: '../../assets/img/img5.jpg'
-href: '#ProduccionTecnica'
-tags: ['Audio & Iluminación', 'Video & Transmisión', 'Efectos Especiales']
+description: 'Estamos convencidos de que celebrar es sinónimo de éxito. Promovemos el festejo de momentos cumbres en nuestras vidas.'
+heroImage: '../../assets/img/img21.png'
+href: '#'
+tags: ['Bodas & Aniversarios', 'Fiestas Privadas', 'Celebraciones Creadas a Medida', 'Ambientes Personalizados', 'Micro-Eventos & Experiencias']
 ---
 
-## El sonido, las luces, los efectos y el video
-
-La tecnología es fundamental para la producción de su evento, ya sea presencial, virtual o híbrido. Contamos con sistemas de sonido, iluminación, proyección, transmisión, grabación y efectos para potenciar cualquier fiesta, concierto, obra de teatro, conferencia, lanzamiento o manifestación artística. ¡Vibremos en la misma frecuencia!
+Estamos convencidos de que celebrar es sinónimo de éxito, por ende, desde Sonora E.S. siempre promovemos el festejo de momentos cumbres en nuestras vidas como lo son las bodas, los cumpleaños, los grados, los aniversarios y en general las fechas importantes que, con el paso del tiempo, recobran mayor valor. Somos seres humanos, dignos de ser felices y merecemos compartir nuestra dicha con nuestros familiares, amigos y conocidos.
