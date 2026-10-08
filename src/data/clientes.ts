@@ -147,7 +147,7 @@ const datosClientes: Cliente[] = [
         url: "https://www.instagram.com/rizzoma_oficial/"
     },
     {
-        nombre: "Cuentro Cultural García Marquez El Original",
+        nombre: "Centro Cultural García Marquez El Original",
         archivoLogo: "Teatro_Garcia.png",
         url: "https://www.instagram.com/teatro_cgm/"
     },

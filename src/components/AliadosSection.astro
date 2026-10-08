@@ -1,0 +1,57 @@
+---
+import datosAliados from "../data/aliados";
+
+const logosAliados = Object.entries(
+    import.meta.glob("../assets/logos-aliados/*.{png,jpg,jpeg,webp,svg}", {
+        eager: true,
+        query: "?url",
+        import: "default",
+    }),
+).map(([path, src]) => {
+    const nombre =
+        path
+            .split("/")
+            .at(-1)
+            ?.replace(/\.[^.]+$/, "")
+            .replaceAll("_", " ") ?? "cliente";
+    return { src, alt: `Logo de ${nombre}` };
+});
+
+// Logos - Url
+const logosPorRuta = import.meta.glob<string>(
+    "../assets/logos-aliados/*.{png,jpg,jpeg,webp,svg}",
+    { eager: true, query: "?url", import: "default" },
+);
+
+const aliados = datosAliados.map(({ archivoLogo, ...aliado }) => {
+    const src = logosPorRuta[`../assets/logos-aliados/${archivoLogo}`];
+
+    if (!src) {
+        throw new Error(`No se encontró el logo: ${archivoLogo}`);
+    }
+
+    return { ...aliado, src };
+});
+---
+
+<section class="w-full flex flex-col bg-secondary items-center p-20 gap-10">
+    <h1 class="title1 text-primary">Aliados</h1>
+    <div  class="flex shrink-0 gap-12" aria-hidden="true">
+        {
+            aliados.map(({ nombre, url, src }) => (
+                <a
+                    href={url}
+                    aria-label={`Visitar el sitio de ${nombre}`}
+                    target="_blank"
+                >
+                    <img
+                        class="h-30 w-auto object-contain"
+                        src={src}
+                        alt={nombre}
+                        loading="lazy"
+                    />
+                </a>
+            ))
+        }
+    </div>
+</section>
