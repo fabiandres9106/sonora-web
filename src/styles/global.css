@@ -6,6 +6,7 @@
 @theme {
 
     --max-w-desktop: 1140px;
+    --spacing-desktop: 1140px;
 
     --color-primary: #FFFF00;
     --color-primary-hover: #FFFF00;

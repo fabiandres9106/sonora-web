@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+
+import PreguntasInfo from "./PreguntasInfo.astro";
+
+import logoSonoraGris from "../assets/logos/logo_sonora_gris.png";
+---
+
+<section class="relative isolate w-full flex flex-col bg-primary items-center py-30 gap-5">
+    <!-- Background Image -->
+    <div
+        class="pointer-events-none absolute inset-0 z-0 opacity-10 bg-center bg-cover bg-no-repeat bg-fixed"
+        style={`background-image:url('${logoSonoraGris.src}')`}
+    >
+    </div>
+    <div class="relative z-10 max-w-desktop flex flex-col items-center gap-5">
+        <h1 class="title1 text-primary">Preguntas Frecuentes</h1>
+        <p class="text-secondary">
+            ¿Algunas dudas? Estamos para responder cualquier inquietud
+            relacionada con tu evento.
+        </p>
+    </div>
+    <div class="relative z-10 max-w-desktop flex flex-col gap-2.5">
+        <PreguntasInfo title="¿Qué es Sonora Event Services?">
+            ¡Hola! Somos una empresa que presta servicios para la producción de
+            eventos tanto presenciales como virtuales: ponemos a disposición de
+            nuestros clientes nuestra infraestructura técnica, nuestra
+            experiencia en la planificación, nuestras ideas y por supuesto,
+            nuestros artistas.
+        </PreguntasInfo>
+        <PreguntasInfo title="¿Qué tipo de eventos hacen?">
+            ¡Cualquier tipo de evento! Desde cualquier evento social como una
+            boda, una fiesta de grado o de cumpleaños, hasta eventos
+            corporativos y/o educativos tales como eventos MICE, lanzamientos,
+            convenciones, congresos y seminarios. También trabajamos en la
+            producción de conciertos, obras de teatro, danza y cualquier
+            manifestación artística que involucre una puesta audiovisual en
+            escena.
+        </PreguntasInfo>
+        <PreguntasInfo title="¿Quiénes nos contratan?">
+            Trabajamos con personas y empresas que gestionan y planifican
+            eventos tales como productores, wedding planners, operadores
+            logísticos, hoteles, clubes, haciendas, teatros, auditorios,
+            colegios, universidades y colectivos artísticos.
+        </PreguntasInfo>
+        <PreguntasInfo title="¿Realizan eventos virtuales?">
+            ¡Sí! Contamos con las herramientas tecnológicas necesarias para
+            organizar eventos tanto virtuales como híbridos. Somos conscientes
+            de la importancia de realizar transmisiones de calidad e
+            interacciones únicas con el público, generando un mayor impacto en
+            cualquier celebración.
+        </PreguntasInfo>
+        <PreguntasInfo
+            title="¿Nos pueden ayudar a conseguir un sitio para nuestro evento?"
+        >
+            ¡Por supuesto! Nuestra trayectoria en la industria nos ha permitido
+            conocer un sinfín de venues o locaciones a lo largo y ancho del
+            país. Trabajamos de manera colaborativa con diferentes teatros,
+            auditorios, bares, restaurantes, haciendas, clubes y hoteles que
+            brindan extraordinarios espacios (ya sean al aire libre o en
+            recintos cerrados) para cualquier tipo de evento.
+        </PreguntasInfo>
+        <PreguntasInfo
+            title="¿Nos ayudan a contratar artistas para nuestro evento?"
+        >
+            ¡Claro que sí! Nuestro equipo de trabajo está compuesto
+            principalmente por artistas, por ende, hemos trabajado con muchas
+            propuestas de shows musicales, obras de teatro, comediantes, danzas
+            y flashmobs acordes a cada evento o cada celebración.
+        </PreguntasInfo>
+        <PreguntasInfo title="¿Alquilan equipos?">
+            Si. Contamos con equipos de audio, iluminación y video tales como
+            Parlantes, Consolas, Micrófonos, Pares Led, Cabezas Móviles,
+            Televisores, Video Beams y Backline en general. Sabemos que pueden
+            existir diferentes aplicaciones donde nuestros clientes requieren
+            algo muy específico (iluminar alguna sala, un amplificador para
+            guitarra para alguna presentación o un micrófono de solapa para una
+            transmisión básica) por eso, el equipo técnico de nuestra compañía
+            siempre estará presto a asesorarlo con el fin de poder alquilar el
+            equipo que se ajuste a cada necesidad.
+        </PreguntasInfo>
+    </div>
+</section>

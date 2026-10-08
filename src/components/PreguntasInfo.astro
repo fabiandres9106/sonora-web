@@ -1,0 +1,68 @@
+---
+const { title } = Astro.props;
+
+import { Icon } from "astro-icon/components";
+---
+
+<div class="max-w-desktop" data-acordeon>
+    <!-- Pregunta -->
+    <button
+        type="button"
+        class="group w-desktop flex justify-between border p-2.5 transition-all duration-300 bg-primary"
+        data-pregunta
+        aria-expanded="false"
+    >
+        <h2>{title}</h2>
+        <Icon
+            name="material-symbols:arrow-forward"
+            class="size-5 transition-transform duration-300 group-aria-expanded:rotate-90 group-aria-expanded:text-primary"
+        />
+    </button>
+
+    <!-- Respuesta -->
+    <div
+        class="grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-300"
+        data-respuesta
+        inert
+    >
+        <div class="min-h-0 overflow-hidden">
+            <div class="border border-t-0 p-2.5 bg-primary">
+                <p class="text-secondary">
+                    <slot />
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document
+        .querySelectorAll<HTMLButtonElement>("[data-pregunta]")
+        .forEach((pregunta) => {
+            const acordeon = pregunta.closest("[data-acordeon]");
+            const respuesta =
+                acordeon?.querySelector<HTMLElement>("[data-respuesta]");
+
+            if (!respuesta) return;
+
+            pregunta.addEventListener("click", () => {
+                const abierto =
+                    pregunta.getAttribute("aria-expanded") !== "true";
+
+                pregunta.setAttribute("aria-expanded", String(abierto));
+
+                // Estilos pregunta
+                pregunta.classList.toggle("bg-secondary", abierto);
+                pregunta.classList.toggle("bg-primary", !abierto);
+                pregunta.classList.toggle("text-primary", abierto);
+
+                // Estilos respuesta
+                respuesta.classList.toggle("grid-rows-[1fr]", abierto);
+                respuesta.classList.toggle("grid-rows-[0fr]", !abierto);
+                respuesta.classList.toggle("opacity-100", abierto);
+                respuesta.classList.toggle("opacity-0", !abierto);
+
+                respuesta.inert = !abierto;
+            });
+        });
+</script>
