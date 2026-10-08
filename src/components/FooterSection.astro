@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+
+import logoSonora from "../assets/logos/logo_sonora_amarillo.png";
+---
+
+<section class="w-full flex justify-around bg-secondary p-30">
+    <div class="max-w-desktop flex gap-20">
+        <div class="w-1/2 flex items-center justify-center">
+            <Image
+                src={logoSonora}
+                alt="Logo Sonora Events Produces"
+                class="object-cover w-96"
+            />
+        </div>
+        <div class="w-1/2 flex flex-col items-center gap-5">
+            <h1 class="title1 text-primary">Contácto</h1>
+            <p class="text-white text-center">
+                Solicita una cotización mediante nuestra página web, nuestras
+                redes sociales o mediante una llamada. Alguien de nuestro equipo
+                de trabajo estará dispuesto a escuchar con atención tus
+                solicitudes.
+            </p>
+            <form action="" class="w-full flex flex-col gap-2.5">
+                <input type="text" placeholder="Nombres y Apellidos" />
+                <input type="tel" placeholder="Teléfono / WhatsApp" />
+                <input type="email" placeholder="Email" />
+                <textarea placeholder="Mensaje..."></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="w-full bg-black items-center p-2">
+    <p class="uppercase text-white text-center font-semibold text-sm">Sonora Event Services - Todos los derechos reservados 2026</p>
+</section>

@@ -41,3 +41,11 @@ h1.title1 {
 p{
     @apply leading-5
 }
+
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    @apply bg-white rounded p-2.5 w-full
+}
+
+button[type="submit"] {
+    @apply bg-primary p-1 border text-secondary transition-all cursor-pointer hover:bg-secondary hover:text-primary hover:border-primary
+}
