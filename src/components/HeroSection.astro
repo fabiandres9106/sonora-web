@@ -23,28 +23,43 @@ import heroImage from "../assets/logos/logo_sonora_amarillo.png";
         class="relative flex flex-col items-center justify-end h-dvh w-full z-20"
     >
         <div
-            class="flex items-center justify-center max-w-desktop pt-20 h-full gap-10"
+            class="flex flex-col items-center justify-center max-w-desktop pt-20 px-4 h-full gap-10
+            lg:flex-row lg:px-20"
         >
-            <div class="w-1/2">
+            <div
+                class="flex w-full items-center justify-center
+            lg:w-1/2 lg:justify-start"
+            >
                 <Image
                     width={450}
                     src={heroImage}
                     alt="Sonora Event Services"
+                    class="w-full max-w-62 h-auto lg:max-w-[450px]"
                 />
             </div>
-            <div class="w-1/2 flex flex-col gap-5 align-middle">
+            <div
+                class="w-full flex flex-col gap-5 align-middle
+            lg:w-1/2"
+            >
                 <h1
-                    class="text-primary font-bold text-5xl text-right leading-12"
+                    class="text-primary font-bold text-2xl text-center leading-6
+                    lg:text-5xl lg:text-right lg:leading-12"
                 >
                     CELEBREMOS LA VIDA<br />CELEBREMOS MÁS
                 </h1>
-                <p class="text-primary text-right leading-5 py-2">
+                <p
+                    class="text-primary text-right leading-5 py-2 hidden lg:block"
+                >
                     Estamos convencidos de que podemos convertir cualquier
                     evento en una experiencia poderosa, única y extraordinaria
                     utilizando nuestra experiencia y conocimiento en la
                     industria del entretenimiento, las artes y la cultura
                 </p>
-                <div class="flex gap-5 justify-end py-2">
+                <p class="text-primary leading-5 text-center py-2 max-w-md lg:hidden">
+                    Estamos convencidos de que podemos convertir cualquier
+                    evento en una experiencia poderosa, única y extraordinaria
+                </p>
+                <div class="hidden gap-5 justify-end py-2 lg:flex">
                     <ButtonLightYellow href="#"
                         >Más información</ButtonLightYellow
                     >
@@ -52,7 +67,7 @@ import heroImage from "../assets/logos/logo_sonora_amarillo.png";
                 </div>
             </div>
         </div>
-        <div class="flex py-10 gap-5">
+        <div class="flex py-10 gap-1 flex-wrap items-center justify-center lg:gap-5">
             <ButtonMenuHeader href="#">Inicio</ButtonMenuHeader>
             <ButtonMenuHeader href="#Nosotros">Nosotros</ButtonMenuHeader>
             <ButtonMenuHeader href="#">Servicios</ButtonMenuHeader>
