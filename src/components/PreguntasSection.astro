@@ -6,21 +6,21 @@ import PreguntasInfo from "./PreguntasInfo.astro";
 import logoSonoraGris from "../assets/logos/logo_sonora_gris.png";
 ---
 
-<section class="relative isolate w-full flex flex-col bg-primary items-center py-30 gap-5">
+<section class="relative isolate w-full flex flex-col bg-primary items-center px-5 py-20 gap-5 lg:py-30">
     <!-- Background Image -->
     <div
         class="pointer-events-none absolute inset-0 z-0 opacity-10 bg-center bg-cover bg-no-repeat bg-fixed"
         style={`background-image:url('${logoSonoraGris.src}')`}
     >
     </div>
-    <div class="relative z-10 max-w-desktop flex flex-col items-center gap-5">
-        <h1 class="title1 text-primary">Preguntas Frecuentes</h1>
+    <div class="relative z-10 w-full flex flex-col items-center gap-5 lg:max-w-desktop">
+        <h1 class="title1 text-primary text-center">Preguntas Frecuentes</h1>
         <p class="text-secondary">
             ¿Algunas dudas? Estamos para responder cualquier inquietud
             relacionada con tu evento.
         </p>
     </div>
-    <div class="relative z-10 max-w-desktop flex flex-col gap-2.5">
+    <div class="relative z-10 w-full flex flex-col gap-2.5 lg:max-w-desktop">
         <PreguntasInfo title="¿Qué es Sonora Event Services?">
             ¡Hola! Somos una empresa que presta servicios para la producción de
             eventos tanto presenciales como virtuales: ponemos a disposición de

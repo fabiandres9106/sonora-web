@@ -4,15 +4,15 @@ const { title } = Astro.props;
 import { Icon } from "astro-icon/components";
 ---
 
-<div class="max-w-desktop" data-acordeon>
+<div class="w-full lg:max-w-desktop" data-acordeon>
     <!-- Pregunta -->
     <button
         type="button"
-        class="group w-desktop flex justify-between border p-2.5 transition-all duration-300 bg-primary"
+        class="group flex w-full justify-between border p-2.5 transition-all duration-300 bg-primary lg:w-desktop"
         data-pregunta
         aria-expanded="false"
     >
-        <h2>{title}</h2>
+        <h2 class="text-left">{title}</h2>
         <Icon
             name="material-symbols:arrow-forward"
             class="size-5 transition-transform duration-300 group-aria-expanded:rotate-90 group-aria-expanded:text-primary"

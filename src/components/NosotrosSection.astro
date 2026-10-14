@@ -7,12 +7,13 @@ import nosotrosImg2 from "../assets/img/img4.jpg";
 import nosotrosImg3 from "../assets/img/img16.jpg";
 ---
 
-<section id="Nosotros" class="w-full items-center flex flex-col px-25 py-30">
-    <div class="max-w-desktop flex items-center gap-5">
-        <div id="gallery-section" class="flex justify-center w-1/2">
-            <div class="card-stack w-90 h-115 cursor-pointer" id="cardStack">
+<section id="Nosotros" class="w-full items-center flex flex-col px-5 pb-20 lg:py-30">
+    <div class="max-w-desktop flex items-center gap-5 flex-wrap lg:flex-nowrap">
+        <div id="gallery-section" class="flex w-full items-center justify-center lg:w-1/2">
+            <div class="card-stack w-full h-90 cursor-pointer scale-55 lg:scale-100 lg:h-115" id="cardStack">
                 <div
-                    class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform"
+                    class="photo-card absolute w-88 h-115 bg-white p-2 rounded-sm shadow-2xl transition-transform
+                    lg:w-88"
                     data-index="0"
                 >
                     <Image
@@ -43,12 +44,12 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
                 </div>
             </div>
         </div>
-        <div class="w-1/2 flex flex-col items-end justify-center gap-5">
-            <div class="flex flex-col gap-1 items-end">
+        <div class="w-full flex flex-col items-center justify-center gap-5 lg:w-1/2 lg:items-end">
+            <div class="flex flex-col gap-1 items-center lg:items-end">
                 <h1 class="title1 text-white">Celebremos la vida</h1>
                 <h1 class="title1 text-white">Celebremos más</h1>
             </div>
-            <p class="text-right text-base-text">
+            <p class="text-center text-base-text text-sm lg:text-base lg:text-right">
                 <b>Somos una empresa líder en servicios para eventos</b>, pero,
                 para nosotros, eso significa mucho más. Estamos convencidos de
                 que podemos convertir cualquier evento en una experiencia
@@ -59,7 +60,7 @@ import nosotrosImg3 from "../assets/img/img16.jpg";
                     posterior evaluación, logramos que ocurran cosas increíbles.</b
                 >
             </p>
-            <div class="flex gap-2.5">
+            <div class="flex gap-1 lg:gap-2.5">
                 <ButtonYellow href="#">Nosotros</ButtonYellow>
                 <ButtonYellow href="#">Nuestra Cultura</ButtonYellow>
                 <ButtonYellow href="#">Nuestro Equipo</ButtonYellow>

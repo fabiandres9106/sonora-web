@@ -8,11 +8,11 @@ const allServices = (await getCollection("services")).sort(
 ---
 
 <section
-    class="flex flex-col w-full items-center py-20 gap-10 overflow-hidden border-b"
+    class="flex flex-col w-full items-center py-15 gap-5 overflow-hidden border-b lg:gap-10 lg:py-20"
 >
-    <div class="flex flex-col max-w-desktop items-center gap-10">
+    <div class="flex flex-col w-full max-w-desktop items-center gap-5 px-4 lg:gap-10">
         <h1 class="title1 text-white">Servicios</h1>
-        <p class="text-center text-secondary">
+        <p class="text-center text-secondary text-sm lg:text-base">
             <b>Admiramos las grandes ideas y los desafíos.</b> Nuestro equipo de trabajo
             conducido por el amor a lo que hacemos, estará siempre dispuesto a ayudarle,
             alineados en conjunto con nuestra misión. Somos seres humanos apasionados
@@ -28,7 +28,7 @@ const allServices = (await getCollection("services")).sort(
         data-card-scroller
     >
         <div
-            class="flex flex-none w-max min-w-full justify-start 2xl:justify-center px-16"
+            class="flex flex-none w-max min-w-full justify-start 2xl:justify-center p-4 lg:px-16"
         >
             {
                 allServices.map((service) => (

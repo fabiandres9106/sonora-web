@@ -1,5 +1,5 @@
 ---
-title: 'Producción Creativa'
+title: 'Producción Artística'
 order: 4
 description: 'Somos parte de la industria del entretenimiento, por ende, creemos firmemente en la sinergia de las artes con la producción. '
 heroImage: '../../assets/img/img16.jpg'

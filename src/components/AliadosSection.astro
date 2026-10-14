@@ -34,9 +34,9 @@ const aliados = datosAliados.map(({ archivoLogo, ...aliado }) => {
 });
 ---
 
-<section class="w-full flex flex-col bg-secondary items-center p-20 gap-10">
+<section class="w-full flex flex-col items-center py-15 gap-2 bg-secondary overflow-hidden px-2 lg:gap-10 lg:py-20">
     <h1 class="title1 text-primary">Aliados</h1>
-    <div  class="flex shrink-0 gap-12" aria-hidden="true">
+    <div  class="flex shrink-0 gap-2 lg:gap-12" aria-hidden="true">
         {
             aliados.map(({ nombre, url, src }) => (
                 <a

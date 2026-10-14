@@ -4,16 +4,16 @@ import { Image } from "astro:assets";
 import logoSonora from "../assets/logos/logo_sonora_amarillo.png";
 ---
 
-<section class="w-full flex justify-around bg-secondary p-30">
-    <div class="max-w-desktop flex gap-20">
-        <div class="w-1/2 flex items-center justify-center">
+<section class="w-full flex justify-around bg-secondary p-10 lg:p-30">
+    <div class="max-w-desktop flex flex-col-reverse gap-10 lg:flex-row lg:gap-20">
+        <div class="w-full flex items-center justify-center border-t border-primary p-10 lg:w-1/2">
             <Image
                 src={logoSonora}
                 alt="Logo Sonora Events Produces"
                 class="object-cover w-96"
             />
         </div>
-        <div class="w-1/2 flex flex-col items-center gap-5">
+        <div class="w-full flex flex-col items-center justify-center gap-5 lg:w-1/2">
             <h1 class="title1 text-primary">Contácto</h1>
             <p class="text-white text-center">
                 Solicita una cotización mediante nuestra página web, nuestras
@@ -32,5 +32,5 @@ import logoSonora from "../assets/logos/logo_sonora_amarillo.png";
     </div>
 </section>
 <section class="w-full bg-black items-center p-2">
-    <p class="uppercase text-white text-center font-semibold text-sm">Sonora Event Services - Todos los derechos reservados 2026</p>
+    <p class="uppercase text-white text-center font-semibold text-xs lg:text-sm">Sonora Event Services - Todos los derechos reservados 2026</p>
 </section>
